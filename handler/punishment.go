@@ -9,10 +9,7 @@ import (
 )
 
 func GetPunishments(w http.ResponseWriter, r *http.Request) {
-	err := json.NewEncoder(w).Encode(punishment.GetPunishments())
-	if err != nil {
-		fmt.Println(err)
-	}
+	rJSON(w, http.StatusOK, punishment.GetPunishments())
 }
 
 func GetPunishmentById(w http.ResponseWriter, r *http.Request) {
