@@ -9,7 +9,7 @@ import (
 type H map[string]interface{}
 
 func rError(w http.ResponseWriter, code int, message string) {
-	rJSON(w, code, map[string]string{"error": message})
+	rJSON(w, code, H{"error": message})
 }
 
 func rJSON(w http.ResponseWriter, code int, payload interface{}) {
